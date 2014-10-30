@@ -3,4 +3,4 @@
 	$host = "localhost";
 	$username = "root";
 	$password = "root";
-	$database = "blog_db";//creates database
+	$database = "blog_db";//creates database.

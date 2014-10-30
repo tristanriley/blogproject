@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Blogs</title>
+		<title>Blogs.</title>
 	</head>
 	<body>
 		<?php

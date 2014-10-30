@@ -28,6 +28,6 @@
 		. "id int(11) NOT NULL AUTO_INCREMENT,"//up to 11 values in intergers, cant be post without id
 		. "title varchar(225) NOT NULL,"
 		. "post text NOT NULL,"
-		. "PRIMARY KEY (id)");//creats query that creats table called post and evey post within table has id
+		. "PRIMARY KEY (id)");//creats query that creats table called post and evey post within table has id.
 
 	$connection->close();
