@@ -4,7 +4,7 @@
 
 	$connection = new mysqli($host, $username, $password);
 
-	if($connection->connect_error){//checking wether or not there was an error connecting to the database
+	if($connection->connect_error){//checking wether or not there was an error connecting to the database.
 		die("Error: "  . $connection->connect_error);
 
 	}
