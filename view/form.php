@@ -1,6 +1,11 @@
+<?php
+require_once(__DIR__ . "/../model/config.php")//calls config fom model
+?>
+
 <h1>Create Blog Post</h1>
 
-<form>
+<form method="post" action="<?php echo $path . "controller/create-post.php"; //use var to save path and actual location?>"> 
+<!-- sending information -->
 	<div>
 		<label for="title">Title: </label>
 		<input type="text" name="title"/>
