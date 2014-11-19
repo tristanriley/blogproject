@@ -5,4 +5,6 @@
 	$username = "root";//stores username for phpmyadmin
 	$password = "root";//stores password for phpmyadmin
 	$database = "blog_db";//creates database
+
+	$connection = new Database($host, $username, $password, $database);//holds info to connect to database
 ?>

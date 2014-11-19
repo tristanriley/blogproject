@@ -31,7 +31,13 @@ class Database {//global variables
 	}
 
 	public function query($string){
+		$this->openConnection();
 
+		$query = $this->connection->query($string);//excecutes query on database
+
+		$this->closeConnection();//closes conection
+
+		return $query;
 	}
 
 }
