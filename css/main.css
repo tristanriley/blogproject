@@ -1,5 +1,5 @@
 body{
-	background-color: blue;
+	background="background.jpg";
 }
 
 @media screen and (max-width: 320px){
