@@ -7,14 +7,14 @@ class Database {//global variables
 	private $database;
 	public $error;
 
-	public function__construct($host, $username, $password, $database){//local variables disapear once function is used
+	public function __construct($host, $username, $password, $database){//local variables disapear once function is used
 		$this->host;
 		$this->username;
 		$this->password;
 		$this->database;//stores info that gets pased in
-
+	
 	$this->connection = new mysqli($host, $username, $password);
-
+	
 	if($this->connection->connect_error){//checking wether or not there was an error connecting to the database.
 		die("Error: "  . $this->connection->connect_error);
 
@@ -27,7 +27,7 @@ class Database {//global variables
 	
 
 		if ($query) {//runs when database exists
-			echo "<p>Succesfully created database: " . $database"</p>";
+			echo "<p>Succesfully created database: " . $database . "</p>";
 		}
 	}
 	else{//runs when database has already been created

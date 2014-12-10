@@ -15,7 +15,7 @@
 
 	<div>
 		<label for="password">Password: </label>
-		<input type="password"name="password"/> 
+		<input type="password"name="password"/>
 		<!-- creates text area for password -->
 	</div>
 
