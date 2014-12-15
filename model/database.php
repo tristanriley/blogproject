@@ -1,79 +1,86 @@
 <?php
-class Database {//global variables
-	private $connection;
-	private $host;
-	private $username;
-	private $password;
-	private $database;
-	public $error;
+	//a class is an object that can be used throughout code
+	class Database{  
+		private $connection;  
+		//global variables
+		private $host;  
+		private $username;
+		private $password;
+		private $database;
+		//this variable is public so that we can access it in create-db.php
+		public $error;
+		
+		//allows me to use objects of the Databse class. Defines class. Parameters allow us to use the global variables for this function
+		public function __construct($host, $username, $password, $database){  
+			//accesses the global variable $host
+			$this->host = $host;  
+			//these are local variables
+			$this->username = $username;  
+			//they are deleted when this function is finished.
+			$this->password = $password;  
+			$this->database = $database;
 
-	public function __construct($host, $username, $password, $database){//local variables disapear once function is used
-		$this->host;
-		$this->username;
-		$this->password;
-		$this->database;//stores info that gets pased in
-	
-	$this->connection = new mysqli($host, $username, $password);
-	
-	if($this->connection->connect_error){//checking wether or not there was an error connecting to the database.
-		die("Error: "  . $this->connection->connect_error);
+			//helps connect to Database.php variables by putting them in an object.  this opens the connection.  
+			$this->connection = new mysqli($host, $username, $password); 
+			//runs if there is no connecton to database.php and hte variables aren't getting read
+			if($this->connection->connect_error){ 
+				//eschoes that there is an error
+				die("Error: "  . $this->connection->connect_error); 
+			}
+			
+			//try to access a database that exist on the mysql server. selecting database, whether server will say whether database exists
+			$exists = $this->connection->select_db($database); 
+			//checking if it connected to database only runs when the database doesn't exist 
+			if(!$exists){
+				//php will replace the variable $database with its value "blog_db". creates a query that creates a connection to my server
+				$query = $this->connection->query("CREATE DATABASE $database");  
+				//checks whether $query was true or not												
+				if($query){ 
+					//echoes that the database was created
+					//echo "<p>successfully created database: " . $database . "</p>"; 
+				}
 
-	}
+			}
+			//runs when database has already been created
+			else{
 
-	$exists = $this->connection->select_db($database);//access a data base that exists on server
-
-	if (!$exists) {//checking wether or not it connected with datavase
-		$query = $this->connection->query("CREATE DATABASE $database");
-	
-
-		if ($query) {//runs when database exists
-			echo "<p>Succesfully created database: " . $database . "</p>";
-		}
-	}
-	else{//runs when database has already been created
-
-		echo "<p>Database already exists.</p>";
-	}
-	}
-
-	//functions allow us to reuse code instead of rewriting it.
-	public function openConnection(){
-
-		$this->connection = new mysqli($this->host, $this->username, $this->password, $this->database);//new connection variable
-		if($this->connection->connect_error){//checking wether or not there was an error connecting to the database.
-			die("Error: "  . $this->connection->connect_error);
-
-		}
-
-	}
-
-	//the function ches if info is present and closes th connection
-	public function closeConnection(){
-		if (isset($this->connection)) {//checks if information is present
-			$this->connection->close();//closes he function
-		}
-	}
-
-	//creates query and checks for errors
-	public function query($string){
-		$this->openConnection();
-
-		$query = $this->connection->query($string);//excecutes query on database
-
-		if (!$query) {
-			$this->error = $this->connection->error;
+			}
 		}
 
-		$this->closeConnection();//closes conection
+		//used to hold repetitive code.  specifically the connection opener
+		public function openConnection(){  
+			//accesses the local variables from the construct function
+			$this->connection = new mysqli($this->host, $this->username, $this->password, $this->database); 
+			//runs if there is no connecton to database.php and hte variables aren't getting read
+			if($this->connection->connect_error){ 
+				//eschoes that there is an error
+				die("Error: "  . $connection->connect_error); 
+			}
 
-		return $query;
+		}
+
+		//places code in function and names it
+		public function closeConnection(){  
+			if(isset($this->connection)){
+				$this->connection->close();
+			}
+		}
+		//the query function takes a string of text and uses it to query the database at $query
+		public function query($string){ 
+			//runs the openConnection() function
+			$this->openConnection();
+			//uses a query database
+			$query = $this->connection->query($string);  
+			//checks if wrong and sends error
+			if(!$query){
+				//connects to the publiv variable "error" to find the source of error
+				$this->error = $this->connection->error;
+			}
+
+			//runs closeConnection() 
+			$this->closeConnection();  
+			//returns the results of query
+			return $query; 
+		}
+
 	}
-
-}
-/*__construct() is the method name for the constructor.
-The constructor is called on an object after it has been created, and is a good place to put initialisation code*/
-
-/*classes package the data and all possible operations on that data together. It's a way to view your code in a more intuitive way.
-Basically, classes allow you to put your data with the code. In object-oriented programming,
-a class is an extensible program-code-template for creating objects,
-providing initial values for variables and implementations of behavior.*/

@@ -1,17 +1,39 @@
 body{
-	background="background.jpg";
+	background-image: url(../images/orange.png);
+  	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+  	background-size: cover;
+	background-attachment: fixed;
+	min-height: 100%
+	-webkit-text-size-adjust: none;
+  	overflow-x: hidden;
+  	padding: 20px 0px 0px 20px;
 }
 
-@media screen and (max-width: 320px){
-	/*adjusts styling for phones*/
-	body{
-		background-color: red;
-	}
-}
 
-@media screen and (max-width: 1024px){
-	/*adjusts styling for phones*/
+@media screen and (max-width: 40em) {
 	body{
 		background-color: yellow;
-	}
+		}
+}
+
+
+@media screen and (max-width: 460px) {
+	body{
+		background-color: black;
+		}
+}
+
+#home{
+	width: 800px;
+	
+    font-family: 'Indie Flower', cursive;
+
+}
+
+#header{
+
+
+	  font-family: 'Francois One', sans-serif;
 }

@@ -1,12 +1,27 @@
 <!DOCTYPE html>
+	<meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> 
+	<html>
+		<head>
+			<!-- links css to home page -->
+			<link rel="stylesheet" type="text/css" href="css/main.css"> 
+			<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
+			<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width">
+			<meta name="viewport" content="width=320">
+			<link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+			<link href='http://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
+			<title>Blogs</title>
+		</head>
+		
+		<header id="header">
+			<h1>Deliciously Tristan</h1>
+		</header>
+		<body>
 
-<html>
-	<head>
-	<!-- used for styling makes it so we dont have to renter styling every time -->
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<!-- calls stylesheet from css -->
-		<meta charset="UTF-8">
-		<meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> 
-		<title>Blogs</title>
-	</head>
-	<body>
+		<div id="home">
+			<p>
+			Hi, my name is Tristan Whitaker and this is my blog about the daily activities that i experiences.
+			</p>
+		</div>
+		

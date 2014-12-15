@@ -1,0 +1,47 @@
+body{
+	background-image: url(../images/bridge.jpg);
+  	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+  	background-size: cover;
+  	font-family: 'PT Sans';
+	background-attachment: fixed;
+	min-height: 100%
+	-webkit-text-size-adjust: none;
+  	overflow-x: hidden;
+	text-align: center;-left
+}
+#post{
+	margin-left: 0px;
+	color: black;
+	font-size: 25px;
+
+}
+
+#titlename{
+	color: black;
+}
+
+@media screen and (max-width: 40em) {
+	body{
+		background-color: red;
+		}
+}
+
+
+@media screen and (max-width: 460px) {
+	body{
+		background-color: brown;
+		}
+}
+
+#viewpost{
+	color: black;
+	margin-left: 40px;
+}
+
+#poster{
+	margin-left: 40px;
+	color: black;
+	font-size: 25px;
+}

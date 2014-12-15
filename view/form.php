@@ -1,25 +1,33 @@
 <?php
-require_once(__DIR__ . "/../model/config.php")//calls config fom model
+	require_once(__DIR__ . "/../model/config.php"); 
+	require_once(__DIR__ . "/../controller/login-verify.php");
+	//runs if the user hasn't logged in
+	if (!authenticateUser()) {
+		//sends the user back to the home page
+		header("Location: " . $path . "home.php");
+		//eliminate the page from loading
+		die();
+	}
 ?>
 
-<h1>Create Blog Post</h1>
-
-<form method="post" action="<?php echo $path . "controller/create-post.php"; //use var to save path and actual location?>"> 
-<!-- sending information -->
-	<div>
-		<label for="title">Title: </label>
-		<input type="text" name="title"/>
-		<!-- creates text area for title -->
+<h1>Create A Blog Post</h1>
+<!-- sends post data to create-post.php and echoes the data -->
+<form method = "post" action = "<?php echo $path . "controller/create-post.php"; ?>"> 
+	<div id="title">
+		<!-- labels title box -->
+		<label id= "titlename" for="title"> Title: </label> 	
+		<!--	where title is inserted   -->
+		<input id ="titlebox" type="text" name="title"/>	
 	</div>
 
-	<div>
-		<label for="post">Post: </label>
+	<div id="post">
+		<!-- labels post box -->
+		<label class="post" for="post"> Post: </label>  
+		<!-- where post text is inserted -->
 		<textarea name="post"></textarea> 
-		<!-- creates text area for posts -->
 	</div>
-	<div>
-		<button type="submit">submit</button>
-		<!-- craetes submit button -->
-
-	</div>
+	<!-- Inserts a submit button in the form page -->
+	<button type="submit" class="btn btn-primary btn-lg" class="headingbutton" data-toggle="modal" data-target="#myModal">
+		submit
+	</button>
 </form>
