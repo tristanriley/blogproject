@@ -25,3 +25,4 @@
 	else {
 		echo "<p>Invalid username and password</p>";
 	}
+?>
