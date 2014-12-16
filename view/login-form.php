@@ -4,7 +4,7 @@
 
 <h1>Login</h1>
 <!-- creates the login page for users to sign in -->
-<form method="post" action="<?php echo $path . "controller/login-user.php" ?>">
+<form method="post" action="<?php echo $path . "home.php" ?>">
 	<div>
 		<!-- input box for user's username  -->
 		<label for="username">Username: </label>

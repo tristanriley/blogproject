@@ -13,6 +13,12 @@
 			<link href='http://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
 			<title>Blogs</title>
 		</head>
+
+<div class="wrapper">
+  <a href="http://localhost/blog/controller/logout-user.php" class="btn btn-success">Log Out</a>
+  <a href="http://localhost/blog/login.php" class="btn btn-warning">Log in</a>
+  <a href="http://localhost/blog/register.php" class="btn btn-danger">Register</a>
+</div>
 		
 		<header id="header">
 			<h1>Deliciously Tristan</h1>
@@ -21,7 +27,6 @@
 
 		<div id="home">
 			<p>
-			Hi, my name is Tristan Whitaker and this is my blog about the daily activities that i experiences.
+			Hi, my name is Tristan Whitaker and this is a blog where I talk about recently released movies.
 			</p>
 		</div>
-		

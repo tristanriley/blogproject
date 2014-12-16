@@ -14,7 +14,7 @@
 	<ul>
 		<!-- links the config file to the home page -->
 		<button type="button" class="btn btn-default btn-lg">
-			<a href="<?php echo $path . "post.php"?>"> Blog Post form </a>
+			<a href="<?php echo $path . "post.php"?>"> Back to Blog Post</a>
 		</button>
 	</ul>
 

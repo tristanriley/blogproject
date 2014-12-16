@@ -4,7 +4,7 @@
 
 <h1>REGISTER</h1>
 <!-- goes to create-user page and shows whats there -->
-<form method="post" action="<?php echo $path . "controller/create-user.php";?> ">
+<form method="post" action="<?php echo $path . "home.php";?> ">
 	<div>
 		<!-- input box for email -->
 		<label for="email">Email: </label>
@@ -22,6 +22,6 @@
 	</div>
 	<div>
 		<!-- button to submit input values -->
-		<button type="submit">Submit</button>
+		<button type="submit" class="wrapper">Submit</button>
 	</div>
 </form>
