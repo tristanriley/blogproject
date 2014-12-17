@@ -45,3 +45,98 @@ body{
 	color: black;
 	font-size: 25px;
 }
+
+#log{
+	background-image: url(../images/mountain.jpg);
+  	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+  	background-size: cover;
+  	font-family: 'PT Sans';
+	background-attachment: fixed;
+	min-height: 100%
+	-webkit-text-size-adjust: none;
+  	overflow-x: hidden;
+	text-align: center;
+
+}
+
+#log{
+	
+}
+
+@mixin buttons {
+  //Button Text Color
+  %lightTextColor { color: #88a5b1; }
+  %darkTextColor { color: #fff; }
+  //Button Styles
+  .btn {
+    $buttonColor: #f8f8f8;    
+    font: 12px Helvetica; @extend %lightTextColor;
+    padding: 8px 22px 6px; margin: 0;
+    border: none; border-bottom: 3px #aacedd solid;
+    text-decoration: none;
+    @include background-image(linear-gradient(lighten($buttonColor, 10%), $buttonColor));
+    position: relative;
+    @include box-shadow(rgba(0,0,0,0.2) 0 0 25px -5px);
+    &:hover {
+      @extend %lightTextColor;
+    }
+    &:active {
+      position: relative; top: 3px;
+      border: none;
+    }
+  }
+  //Button Colors - THE MAGIC
+  $buttonColors: primary #005888, info #49AFCD, success #5BB75B, warning #FAA732, danger #DA4F49, inverse #363636;
+  @each $className in $buttonColors {
+    .btn-#{nth($className, 1)} {
+      $buttonColor: nth($className, 2);
+      @extend %darkTextColor;
+      border-bottom: 3px darken($buttonColor, 25%) solid;
+      @include background-image(linear-gradient(lighten($buttonColor, 10%), $buttonColor));
+      &:hover {
+        @extend %darkTextColor; 
+        @include background-image(linear-gradient(lighten($buttonColor, 20%), $buttonColor));
+      }
+    }
+  }
+  //Button Sizes
+  .btn-large {
+    font-size: 18px;
+    padding: 12px 22px 10px;
+  }
+  .btn-small {
+    font-size: 11px;
+    padding: 8px 16px 6px;
+  }
+  .btn-mini {
+    font-size: 9px;
+    padding: 7px 12px 5px;
+  }
+}
+
+//Boostrap Custom Buttons Mixin Call
+@include buttons;
+
+//Layout Stuff
+body {
+  background: url('http://thecssguru.freeiz.com/animate/bg.png');
+}
+.wrapper {
+  width: 525px;
+margin-left: 415px;
+  overflow: hidden;
+  background: rgba(white, 0.8);
+  @include border-radius(5px);
+  h1 {
+    font: bold 28px Helvetica4
+  }
+  a {
+    display: block;
+    float: left;
+    &:active {
+    }    
+  }
+}
+

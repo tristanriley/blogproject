@@ -22,6 +22,6 @@
 	</div>
 	<div>
 		<!-- button to submit input values -->
-		<button type="submit" class="wrapper">Submit</button>
+		<button type="submit">Submit</button>
 	</div>
 </form>

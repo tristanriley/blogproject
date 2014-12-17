@@ -27,6 +27,7 @@
 
 		<div id="home">
 			<p>
-			Hi, my name is Tristan Whitaker and this is a blog where I talk about recently released movies.
+			Hi, my name is Tristan Whitaker and this is a blog where I talk about recently released movies. 
+			I will focus on all kinds of movies from animation movies to horror films to comic book adaptations.
 			</p>
 		</div>
